@@ -1,0 +1,24 @@
+<li class="nav-item dropdown {{ html_classes }}">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class="fa fa-user"></span>
+        User
+    </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        {% if is_granted('ROLE_USER') %}
+            <a class="dropdown-item" href="{{ path('sonata_admin_dashboard') }}">
+                <span class="fa fa-lock"></span>
+                Admin
+            </a>
+            <a class="dropdown-item" href="{{ path('fos_user_profile_show') }}">
+                Profile
+            </a>
+            <a class="dropdown-item" href="{{ path('fos_user_security_logout') }}">
+                Logout
+            </a>
+        {% else %}
+            <a class="dropdown-item" href="{{ path('fos_user_security_login') }}">
+                Login
+            </a>
+        {% endif %}
+    </div>
+</li>

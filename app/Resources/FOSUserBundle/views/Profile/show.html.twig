@@ -1,0 +1,29 @@
+{% extends 'AppBundle:Default:layout.html.twig' %}
+
+{% block content %}
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-6 offset-md-3 mb-5">
+            <br>
+            {% trans_default_domain 'FOSUserBundle' %}
+
+            <h2 class="form-signin-heading mt-5">
+                <span class="fa fa-user"></span>
+                Profile
+            </h2>
+
+            <div class="fos_user_user_show">
+                <p>{{ 'profile.show.username'|trans }}: {{ user.username }}</p>
+                <p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>
+
+
+                <a class="btn btn-primary" href="{{ path('fos_user_profile_edit') }}">
+                    <span class="fa fa-pencil"></span>
+                    Edit profile
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

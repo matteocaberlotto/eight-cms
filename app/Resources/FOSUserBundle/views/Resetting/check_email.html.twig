@@ -1,0 +1,24 @@
+{% extends 'AppBundle:Default:layout.html.twig' %}
+
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block content %}
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-4 offset-md-4 col-sm-6 offset-sm-3">
+
+            <h2 class="form-signin-heading mt-5">
+                <span class="glyphicon glyphicon-lock"></span>
+                Check your email
+            </h2>
+
+            <p class="mt-5 mb-5">
+                {{ 'resetting.check_email'|trans({'%tokenLifetime%': tokenLifetime})|nl2br }}
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock content %}

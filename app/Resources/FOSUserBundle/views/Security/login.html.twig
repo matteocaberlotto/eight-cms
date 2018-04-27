@@ -1,0 +1,48 @@
+{% extends 'AppBundle:Default:layout.html.twig' %}
+
+{% block content %}
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-10 offset-md-1 mb-5">
+
+            <form method="post" class="form-signin col-md-4 offset-md-4 col-sm-6 offset-sm-3" role="form" action="{{ path('fos_user_security_check') }}">
+
+                <br>
+                <h2 class="form-signin-heading mt-5 mb-5">
+                    <span class="fa fa-lock"></span>
+                    Restricted area
+                </h2>
+
+                {% if error %}
+                    <strong class="text-danger" style="display:block;margin-bottom:10px">
+                        <span class="glyphicon glyphicon-warning-sign"></span>
+                        {{ error.messageKey|trans(error.messageData, 'security') }}
+                    </strong class="text-danger">
+                {% endif %}
+
+                <label for="inputEmail" class="sr-only">Username</label>
+                <input type="text" name="_username" id="username" class="form-control" placeholder="Username" required autofocus>
+
+                <label for="inputPassword" class="sr-only">Password</label>
+                <input type="password" name="_password" id="password" class="form-control" placeholder="Password" required>
+
+                <a class="password-reset pull-right" href="{{ path('fos_user_resetting_request') }}">Reset password</a>
+
+                <div class="checkbox">
+                    <label>
+                        <input id="remember_me" type="checkbox" value="on" name="_remember_me"> Remember me
+                    </label>
+                </div>
+
+                <button class="btn btn-primary form-control mt-2" type="submit">Sign in</button>
+
+                {% if csrf_token %}
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+                {% endif %}
+
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}

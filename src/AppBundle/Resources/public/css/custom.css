@@ -1,0 +1,45 @@
+header {
+    background: #343a40;
+}
+
+header a {
+    color: #fff;
+}
+
+#main-content {
+    background: #f5f5f5;
+}
+
+footer .footer-inner {
+    background: #343a40;
+}
+
+footer a {
+    color: #fff;
+}
+
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    z-index: 99999;
+}
+
+#preloader-inner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    font-size: 25px;
+    width: 250px;
+    height: 5rem;
+    margin-top: -2.5rem;
+    margin-left: -125px;
+    text-align: center;
+}
+
+#preloader-inner small {
+    font-size: 13px;
+}
