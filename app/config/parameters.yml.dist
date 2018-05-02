@@ -17,3 +17,7 @@ parameters:
 
     # A secret key that's used to generate certain security-related tokens
     secret: ThisTokenIsNotSoSecretChangeIt
+
+    # google tracking id
+    ga_id: UA-xxxxxxx-x
+    production_host: false # production host (tracking active)

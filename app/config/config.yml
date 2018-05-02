@@ -38,6 +38,10 @@ framework:
 twig:
     debug: '%kernel.debug%'
     strict_variables: '%kernel.debug%'
+    globals:
+        ga_tracking: %ga_id%
+        production_host: %production_host%
+
 
 # Doctrine Configuration
 doctrine:
